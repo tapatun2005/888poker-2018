@@ -24,6 +24,21 @@ var rename = require("gulp-rename");
 var connect = require('gulp-connect-php');
 var cmq = require('gulp-combine-media-queries');
 
+// new 2018
+//------------------
+const argv = require('yargs').boolean('production').argv;
+const gulpif = require('gulp-if');
+const gutil = require('gulp-util');
+const runSequence = require('run-sequence');
+const watch = require('gulp-watch');
+const sourcemaps = require('gulp-sourcemaps');
+
+// Variables
+//-------------------
+const isProd = !!argv.production;
+const isDev = !isProd;
+
+
 
 var csvFiles = {
   main_cards: 'src/data/888poker - main_cards.csv',
@@ -41,9 +56,16 @@ var csvData = [];
 
 var folders = ["local", "amazon", "production"];
 
-gulp.task('default', ['compile', 'watch', 'server', 'json']);
+//gulp.task('default', ['compile', 'watch', 'server', 'json']);
+
+gulp.task('default', function (callback) {
+    runSequence('compile', 'watch', 'server', callback);
+});
 gulp.task('compile', ['scripts', 'markup', 'styles', 'assets', 'fonts', 'sounds']);
 gulp.task('scripts', ['script-compile']);
+
+
+
 
 
 gulp.task('json', function() {
@@ -177,6 +199,9 @@ gulp.task('markup', function () {
     csvData.games[i].es_play = marked(csvData.games[i].es_play);
     csvData.games[i].ru_play = marked(csvData.games[i].ru_play);
     csvData.games[i].dk_play = marked(csvData.games[i].dk_play);
+    csvData.games[i].br_play = marked(csvData.games[i].br_play);
+    csvData.games[i].fr_play = marked(csvData.games[i].fr_play);
+    csvData.games[i].sv_play = marked(csvData.games[i].sv_play);
     
 //intros
     intros = grep(csvData.intros, function(e) {
@@ -188,6 +213,9 @@ gulp.task('markup', function () {
       a.es_description = marked(a.es_description);
       a.ru_description = marked(a.ru_description);
       a.dk_description = marked(a.dk_description);
+      a.br_description = marked(a.br_description);
+      a.fr_description = marked(a.fr_description);
+      a.sv_description = marked(a.sv_description);
       return a;
     });
 
@@ -201,6 +229,9 @@ gulp.task('markup', function () {
       a.es_intro = marked(a.es_intro);
       a.ru_intro = marked(a.ru_intro);
       a.dk_intro = marked(a.dk_intro);
+      a.br_intro = marked(a.br_intro);
+      a.fr_intro = marked(a.fr_intro);
+      a.sv_intro = marked(a.sv_intro);
       return a;
     });
 
@@ -214,6 +245,9 @@ gulp.task('markup', function () {
       a.es_description = marked(a.es_description);
       a.ru_description = marked(a.ru_description);
       a.dk_description = marked(a.dk_description);
+      a.br_description = marked(a.br_description);
+      a.fr_description = marked(a.fr_description);
+      a.sv_description = marked(a.sv_description);
       return a;
     });
 
@@ -227,6 +261,9 @@ gulp.task('markup', function () {
     csvData.stages[i].es_intro = marked(csvData.stages[i].es_intro);
     csvData.stages[i].ru_intro = marked(csvData.stages[i].ru_intro);
     csvData.stages[i].dk_intro = marked(csvData.stages[i].dk_intro);
+    csvData.stages[i].br_intro = marked(csvData.stages[i].br_intro);
+    csvData.stages[i].fr_intro = marked(csvData.stages[i].fr_intro);
+    csvData.stages[i].sv_intro = marked(csvData.stages[i].sv_intro);
     steps = grep(csvData.steps, function(e) {
         return (e.stage_id === csvData.stages[i].stage_id);
     });
@@ -236,6 +273,9 @@ gulp.task('markup', function () {
       a.es_description = marked(a.es_description);
       a.ru_description = marked(a.ru_description);
       a.dk_description = marked(a.dk_description);
+      a.br_description = marked(a.br_description);
+      a.fr_description = marked(a.fr_description);
+      a.sv_description = marked(a.sv_description);
       return a;
     });
   }
@@ -247,6 +287,9 @@ gulp.task('markup', function () {
     csvData.hands[i].de_description = marked(csvData.hands[i].de_description);
     csvData.hands[i].ru_description = marked(csvData.hands[i].ru_description);
     csvData.hands[i].dk_description = marked(csvData.hands[i].dk_description);
+    csvData.hands[i].br_description = marked(csvData.hands[i].br_description);
+    csvData.hands[i].fr_description = marked(csvData.hands[i].fr_description);
+    csvData.hands[i].sv_description = marked(csvData.hands[i].sv_description);
   }
 
 //translations
