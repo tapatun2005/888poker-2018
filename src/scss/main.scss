@@ -349,7 +349,7 @@
 	color:$white_opacity;
 	z-index:1;
 	&.show {
-		z-index: 2;
+		z-index: 3;
 	}
 }
 
@@ -513,6 +513,10 @@
 			color:$white;
 			font-size:.7em;
 			z-index:1;
+		}
+		.js-menu-title {
+			width: 30px;
+			text-align: center;
 		}
 		.share__title {
 			text-transform: uppercase;

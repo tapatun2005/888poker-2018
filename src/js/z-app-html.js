@@ -258,15 +258,21 @@
         //GOOGLE 
 
         $(".pdf").on("click", function(){
-            googleHand("The Game - HANDS", "Download PDF");
+            if(typeof _commonjs888 !== "undefined") {
+                googleHand("The Game - HANDS", "Download PDF");
+            }
         })
         $(".pdf--lang").on("click", function(){
-            googleHand("The Game - HANDS", "Read More");
+            if(typeof _commonjs888 !== "undefined") {
+              googleHand("The Game - HANDS", "Read More");
+            }
         })
 
         $('#game').on('click', '.js-download', function(){
-            googlePlayNow("Play now", "GO TO 888 PLATFORM");
-            downloadApp();
+            if(typeof _commonjs888 !== "undefined") {
+                googlePlayNow("Play now", "GO TO 888 PLATFORM");
+                downloadApp();
+            }
         });
 
         $('#game').on('click', ".eye-info", function (){
@@ -531,7 +537,9 @@
         window.history.pushState({url: "" + currentGameData + ""}, currentGameData, currentGameData+'.html');
 
 
-         googleMain("The Game - Type", " - CARD", currentGameData);
+        if(typeof _commonjs888 == "undefined") {
+            googleMain("The Game - Type", " - CARD", currentGameData);
+        }
         return false;
     }
 
@@ -620,7 +628,7 @@
         var close = $(current).find('.btn--close');
         var list = $(parent).find('.nav__list');
         var pdf = $(parent).find('.pdfs');
-        // var backButton = $(parent).find('.btn--back');
+        var backButton = $(parent).find('.btn--back');
         TweenMax.to(bgTop, 1, {width: "270px", ease:Power2.easeInOut});
         TweenMax.to(parent, 1, {width:"300px", height: "100%", background: "rgba(8,40,71,1)", ease:Power2.easeInOut});
         parent.addClass('show');
@@ -640,7 +648,7 @@
         $('.pdfs').removeClass('show');
         $('.nav__list').removeClass('show');
         setTimeout(function(){
-            //TweenMax.to(".nav__item--menu", 1, {width:"65px", height: "30px", background: "rgba(8,40,71,0)", ease:Power2.easeInOut});
+            TweenMax.to(".nav__item--menu", 1, {width:"65px", height: "30px", background: "rgba(8,40,71,0)", ease:Power2.easeInOut});
             TweenMax.to(".nav__item--hand", 1, {width:"95px", height: "30px", background: "rgba(8,40,71,0)", ease:Power2.easeInOut});
             TweenMax.to(".js-top-bg", 1, {width: "0", ease:Power2.easeInOut});
         }, 500);
@@ -698,7 +706,9 @@
             TweenMax.to("#poker_table", .5, {opacity:0, ease:Power2.easeInOut});
         }
 
-        googleHand("The Game - HANDS", "HANDS Button");
+        if(typeof _commonjs888 == "undefined") {
+            googleHand("The Game - HANDS", "HANDS Button");
+        }
 
         return false;
     }
@@ -2088,6 +2098,8 @@
 
 
 // GOOGLE
+    
+    
 
     function googleHand(key, action){
         if ($('.game').hasClass('active')) {
@@ -2097,8 +2109,9 @@
         } else {
             var id = "Home Page";
         }
-        console.log([key, id, action]);
-        _commonjs888.push({'function': 'GoogleAnalytics.Event', 'values': [key, id, action]});
+        
+            _commonjs888.push({'function': 'GoogleAnalytics.Event', 'values': [key, id, action]});
+        
     }
 
     function googleMain(key, action, id){
@@ -2106,23 +2119,25 @@
         var str = id.split('-').map(function(word){
             return word[0].toUpperCase() + word.substr(1);
         }).join(' ');
-        console.log([key, str, str + action]);
-        _commonjs888.push({'function': 'GoogleAnalytics.Event', 'values': [key, str, str + action]});
+        
+            _commonjs888.push({'function': 'GoogleAnalytics.Event', 'values': [key, str, str + action]});
+        
     }
 
     function googlePlayNow(key, action){
         var id = $(".game.active").attr("id").split('-').map(function(word){
             return word[0].toUpperCase() + word.substr(1);
         }).join(' ');
-         console.log([key + " - " + id, id + "- " + key, action + " - " +id]);
-        _commonjs888.push({'function': 'GoogleAnalytics.Event', 'values': [key + " - " + id, id + "- " + key, action + " - " +id]});
+        
+            _commonjs888.push({'function': 'GoogleAnalytics.Event', 'values': [key + " - " + id, id + "- " + key, action + " - " +id]});
+        
     }
 
     function downloadApp(){
-        _commonjs888.push({'function':'SmartAction.OpenAndDownload','values':['18286','888poker']});
+        
+            _commonjs888.push({'function':'SmartAction.OpenAndDownload','values':['18286','888poker']});
+        
     }
-
-
 
 
     $(document).ready(preloader);

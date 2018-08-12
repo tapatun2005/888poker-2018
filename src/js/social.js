@@ -21,9 +21,21 @@ var social = {
       "dk_description_facebook": "The Game er en visuel guide, der viser dig, hvordan du spiller de mest populære kortspil. Spild ikke tiden, lær Texas Hold'em, og spil din første hånd med det samme.",
       "dk_description_twitter":"Lær at spille Texas Hold’em på ingen tid med vores @888poker visuelle guide #thegame",
 
+      "br_title": "Texas Hold'em: um guia de pôquer interativo do 888poker",
+      "br_description_facebook": "Aprenda a jogar o jogo de cartas mais popular com o guia visual O Jogo. Não perca tempo; aprenda Texas Hold'em e comece sua primeira mão agora mesmo.",
+      "br_description_twitter":"Aprenda a jogar Texas Hold'em rapidamente com o guia visual #thegame do @888poker",
+
+      "fr_title": "Texas Hold'em – un guide interactif sur le poker offert par 888poker",
+      "fr_description_facebook": "Apprenez comment jouer au jeu de cartes le plus populaire grâce au guide visuel The Game. Ne perdez pas de temps, apprenez à jouer au Texas Hold'em et commencez votre première main dès maintenant.",
+      "fr_description_twitter":"Apprenez comment jouer au Texas Hold'em en un instant grâce au guide visuel #thegame de @888poker",
+
+      "sv_title": "Texas Hold’em – en interaktiv pokerguide av 888poker",
+      "sv_description_facebook": "Lär dig hur du spelar det populäraste kortspelet med Spelet, vår visuella guide. Slösa inte tid, lär dig Texas Hold’em och spela din första hand nu.",
+      "sv_description_twitter":"Lär dig hur du spelar det populäraste kortspelet med vår @888poker visuella guide #thegame",
 
 
-      "picture": "http://game888-2.s3-website-eu-west-1.amazonaws.com/images/share-texas-holdem.jpg",
+
+      "picture": "https://www.888poker.com/poker/the-game/images/share-texas-holdem.jpg",
       "caption": "888poker",
       "link": "https://www.888poker.com/poker/the-game"
     },
@@ -48,7 +60,19 @@ var social = {
       "dk_description_facebook": "Vores visuelle guide til Omaha Hi (PLO) giver dig en perfekt start på det spændende spil. Få insiderviden om, hvordan du spiller Omaha i nogle få enkle trin.",
       "dk_description_twitter":"Lær at spille Omaha Hi (PLO) på ingen tid med vores @888poker visuelle guide #thegame",
 
-      "picture": "http://game888-2.s3-website-eu-west-1.amazonaws.com/images/share-omaha.jpg",
+      "br_title": "Omaha Hi: um guia de pôquer interativo do 888poker",
+      "br_description_facebook": "O guia visual de Omaha Hi (PLO) é um lugar perfeito para começar a aprender esse jogo empolgante. Receba as melhores informações sobre como jogar Omaha em algumas etapas simples.",
+      "br_description_twitter":"Aprenda a jogar Omaha Hi (PLO) rapidamente com o guia visual #thegame do @888poker",
+
+      "fr_title": "Omaha Hi – un guide interactif sur le poker offert par 888poker",
+      "fr_description_facebook": "Le guide visuel Omaha Hi (PLO) est l'outil idéal pour commencer à apprendre ce jeu passionnant. Obtenez des conseils de choix en quelques étapes simples sur la manière de jouer à Omaha.",
+      "fr_description_twitter":"Apprenez comment jouer à Omaha Hi (PLO) en un instant grâce au guide visuel #thegame de @888poker",
+
+      "sv_title": "Omaha Hi – en interaktiv pokerguide av 888poker",
+      "sv_description_facebook": "Den visuella guiden för Omaha Hi (PLO) är den perfekta startpunkten för att lära dig spelet, Våra insidertips om hur du spelar Omaha i några enkla steg.",
+      "sv_description_twitter":"Lär dig hur du spelar Omaha Hi (PLO) med vår @888poker visuella guide #thegame",
+
+      "picture": "https://www.888poker.com/poker/the-game/images/share-omaha.jpg",
       "caption": "888poker",
       "link": "https://www.888poker.com/poker/the-game"
     },
@@ -74,7 +98,19 @@ var social = {
       "dk_description_facebook": "Omaha Hi-Lo er et af de mest populære pokerspil med to vindere. Vores visuelle guide viser dig, hvordan du spiller det spændende spil. Styrk dine vinderchancer!",
       "dk_description_twitter":"Lær at spille Omaha Hi-Lo med vores @888poker visuelle guide #thegame",
 
-      "picture": "http://game888-2.s3-website-eu-west-1.amazonaws.com/images/share-omaha-hi-lo.jpg",
+      "br_title": "Omaha Hi-Lo: um guia de pôquer interativo do 888poker",
+      "br_description_facebook": "O Omaha Hi-Lo é um dos mais populares jogos de pôquer com dois vencedores. Aprenda a jogar este jogo empolgante com nosso guia visual. Tenha mais chances de ganhar!",
+      "br_description_twitter":"Aprenda a jogar Omaha Hi-Lo rapidamente com o guia visual #thegame do @888poker",
+
+      "fr_title": "Omaha Hi-Lo – un guide interactif sur le poker offert par 888poker",
+      "fr_description_facebook": "Omaha Hi-Lo est un des jeux de poker avec deux gagnants les plus populaires. Apprenez comment jouer à ce jeu passionnant grâce à notre guide visuel. Augmentez vos chances de gagner!",
+      "fr_description_twitter":"Apprenez comment jouer à Omaha Hi-Lo grâce au guide visuel #thegame de @888poker",
+
+      "sv_title": "Omaha Hi-Lo – en interaktiv pokerguide av 888poker",
+      "sv_description_facebook": "Omaha Hi-Lo är ett av de populäraste pokerspelen med två vinnare. Lär dig hur du spelar detta spännande spel med vår visuella guide. Fler chanser att vinna!",
+      "sv_description_twitter":"Lär dig hur du spelar Omaha Hi-Lo ned vår @888poker visuella guide #thegame",
+
+      "picture": "https://www.888poker.com/poker/the-game/images/share-omaha-hi-lo.jpg",
       "caption": "888poker",
       "link": "https://www.888poker.com/poker/the-game"
     },
@@ -99,8 +135,20 @@ var social = {
       "dk_description_facebook": "7-Card Stud er et fantastisk alternativ til Texas Hold’em poker. Lær at spille klassikeren over dem alle med vores visuelle guide The Game.",
       "dk_description_twitter":"Lær at spille 7-Card Stud med vores @888poker visuelle guide. #thegame",
 
+      "br_title": "7 Card Stud: um guia de pôquer interativo do 888poker",
+      "br_description_facebook": "Seven Card Stud é uma ótima alternativa ao pôquer do Texas Hold'em. Aprenda a jogar o 'pai do pôquer' rapidamente com o guia visual O Jogo.",
+      "br_description_twitter":"Aprenda a jogar Seven Card Stud com o guia visual #thegame do @888poker",
 
-      "picture": "http://game888-2.s3-website-eu-west-1.amazonaws.com/images/share-seven-card-stud.jpg",
+      "fr_title": "7 Card Stud – un guide interactif sur le poker offert par 888poker",
+      "fr_description_facebook": "7-Card Stud est une excellente option pour remplacer le Texas Hold'em. Apprenez à jouer au « père du poker » en un instant grâce au guide visuel The Game.",
+      "fr_description_twitter":"Apprenez à jouer à 7-Card Stud grâce au guide visuel #thegame de @888poker",
+
+      "sv_title": "7 Card Stud – en interaktiv pokerguide av 888poker",
+      "sv_description_facebook": "Seven Card Stud är ett bra alternativ till Texas Hold’em. Lär dig hur du spelar 'det ursprungliga pokerspelet' med Spelet, vår visuella guide.",
+      "sv_description_twitter":"Lär dig hur du spelar Seven Card Stud med @888poker visuella guide #thegame",
+
+
+      "picture": "https://www.888poker.com/poker/the-game/images/share-seven-card-stud.jpg",
       "caption": "888poker",
       "link": "https://www.888poker.com/poker/the-game"
     },
@@ -125,7 +173,19 @@ var social = {
       "dk_description_facebook": "SNAP er et pokerspil i lynfold-format, der er designet til at reducere tiden mellem et fold og en ny hånd. Lær SNAP i dag, og slip for at vente på at vinde!",
       "dk_description_twitter":"Lær SNAP poker i dag! #thegame @888poker",
 
-      "picture": "http://game888-2.s3-website-eu-west-1.amazonaws.com/images/share-snap.jpg",
+      "br_title": "SNAP Poker: um guia de pôquer interativo do 888poker",
+      "br_description_facebook": "O SNAP Poker é um formato de jogo com desistências rápidas, projetado para reduzir o tempo entre uma desistência e uma nova mão. Aprenda o SNAP hoje mesmo e você não terá que esperar muito para ganhar!",
+      "br_description_twitter":"Aprenda o SNAP Poker hoje mesmo! #thegame @888poker",
+
+      "fr_title": "SNAP poker – un guide interactif sur le poker offert par 888poker",
+      "fr_description_facebook": "Le SNAP poker est un jeu de format passe rapide conçu pour réduire la durée entre une passe et une nouvelle main. Apprenez le SNAP dès aujourd'hui et n'attendrez pas longtemps avant de gagner!",
+      "fr_description_twitter":"Apprenez le SNAP poker dès aujourd'hui! #thegame @888poker",
+
+      "sv_title": "SNAP poker – en interaktiv pokerguide av 888poker",
+      "sv_description_facebook": "SNAP poker är ett format utformat att minska väntetider där du får en ny hand så fort du kastar korten. Lär dig SNAP nu så behöver du inte vänta på att vinna!",
+      "sv_description_twitter":"Lär dig SNAP poker i dag! #thegame @888poker",
+
+      "picture": "https://www.888poker.com/poker/the-game/images/share-snap.jpg",
       "caption": "888poker",
       "link": "https://www.888poker.com/poker/the-game"
     },
@@ -147,9 +207,21 @@ var social = {
       "dk_description_twitter":"Få insiderviden om, hvordan du spiller de mest populære pokerspil i nogle få enkle trin. #thegame @888poker",
       "dk_description_facebook": "Få insiderviden om, hvordan du spiller de mest populære pokerspil i nogle få enkle trin",
 
+      "br_title": "O Jogo: um guia de pôquer interativo do 888poker",
+      "br_description_facebook": "Receba as melhores informações sobre como jogar os jogos de pôquer mais populares em poucas etapas",
+      "br_description_twitter":"Receba as melhores informações sobre como jogar os jogos de pôquer mais populares em algumas etapas simples. #thegame @888poker",
+
+      "fr_title": "The Game – un guide interactif sur le poker offert par 888poker",
+      "fr_description_facebook": "Obtenez des conseils de choix en quelques étapes sur la manière de jouer aux jeux de poker les plus populaires",
+      "fr_description_twitter":"Obtenez des conseils de choix en quelques étapes simples sur la manière de jouer aux jeux de poker les plus populaires. #thegame @888poker",
+
+      "sv_title": "Spelet – en interaktiv pokerguide av 888poker",
+      "sv_description_facebook": "Våra insidertips om hur du spelar de populäraste pokerspelen i några steg",
+      "sv_description_twitter":"Våra insidertips om hur du spelar de populäraste pokerspelen i några enkla steg. #thegame @888poker",
 
 
-      "picture": "http://game888-2.s3-website-eu-west-1.amazonaws.com/images/facebook-share.jpg",
+
+      "picture": "https://www.888poker.com/poker/the-game/images/facebook-share.jpg",
       "caption": "888poker",
       "link": "https://www.888poker.com/poker/the-game"
     }

@@ -32,6 +32,7 @@ const gutil = require('gulp-util');
 const runSequence = require('run-sequence');
 const watch = require('gulp-watch');
 const sourcemaps = require('gulp-sourcemaps');
+const clean = require('gulp-clean');
 
 // Variables
 //-------------------
@@ -59,13 +60,28 @@ var folders = ["local", "amazon", "production"];
 //gulp.task('default', ['compile', 'watch', 'server', 'json']);
 
 gulp.task('default', function (callback) {
-    runSequence('compile', 'watch', 'server', callback);
+    runSequence('clean', 'compile', 'watch', 'server', callback);
 });
+
+gulp.task('dev', function (callback) {
+    runSequence('clean', 'compile', 'watch', 'server', callback);
+});
+
+
 gulp.task('compile', ['scripts', 'markup', 'styles', 'assets', 'fonts', 'sounds']);
 gulp.task('scripts', ['script-compile']);
 
 
+gulp.task('prod', function (callback) {
+    runSequence('clean', 'compile-php', callback);
+});
+gulp.task('compile-php', ['script-compile-php', 'markup', 'styles', 'assets', 'fonts', 'sounds']);
 
+
+gulp.task('clean', () => {
+    return gulp.src('build/')
+        .pipe(clean({ force: true }));
+});
 
 
 gulp.task('json', function() {
@@ -167,6 +183,22 @@ var scriptsPHP = [
 
 
 gulp.task('script-compile', ['script-hints'], function () {
+  
+  for (var i in csvData.languages) {
+    var lang = csvData.languages[i].lang_code;
+
+    var scripts = gulp.src(scriptsHTML)
+      .pipe(concat('scripts.js'))
+      .pipe(rename('scripts.min.js'))
+      .pipe(uglify());
+    
+    scripts.pipe(gulp.dest('build/'+ lang+'/js'))
+
+  }
+
+});
+
+gulp.task('script-compile-php', ['script-hints'], function () {
   
   for (var i in csvData.languages) {
     var lang = csvData.languages[i].lang_code;
@@ -296,6 +328,7 @@ gulp.task('markup', function () {
   
   for (var i in csvData.languages) {
     var lang = csvData.languages[i].lang_code;
+    var langAbbr = csvData.languages[i].abbr;
 
     var h = gulp
             .src('src/templates/*.jade')
@@ -303,6 +336,7 @@ gulp.task('markup', function () {
               rootUrl: csvData.languages[i].link,
               logo: csvData.languages[i].logo_image,
               website_url: csvData.languages[i].website_link,
+              langAbbr: langAbbr,
               langCode: lang,
               intro: csvData.languages[i].intro, 
               rules: csvData.languages[i].rules,
@@ -336,9 +370,12 @@ gulp.task('markup', function () {
               return csvData;
             }))
             .pipe(jade())
-            .pipe(rename(function (path) {
+            .pipe(gulpif(isDev, rename(function (path) {
                path.extname = ".html"
-            }))
+            })))
+            .pipe(gulpif(isProd, rename(function (path) {
+               path.extname = ".php"
+            })))
 
     h
       .pipe(gulp.dest('build/'+ lang));
