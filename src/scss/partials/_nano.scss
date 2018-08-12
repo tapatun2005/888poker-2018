@@ -29,6 +29,9 @@ $contentClass: "nano-content" !default;
      @media screen and (max-width: $tablet) {
         padding: 10px 5px 0px 0;
      }
+     @media screen and (max-width: $phone-big) {
+        padding: 5px 5px 0px 0;
+     }
    } 
 }
 

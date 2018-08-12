@@ -12,8 +12,7 @@
         $(".nano-hands-menu").nanoScroller();
     }
 
-    var swipe = new Hammer(document.getElementsByTagName('body')[0]),
-        userLang = navigator.language || navigator.userLanguage,
+    var userLang = navigator.language || navigator.userLanguage,
         pokerHandsUrl = "http://www.888poker.com/how-to-play-poker/hands/",
         baseDomain = "",
         loader,
@@ -47,8 +46,6 @@
     
     function WidthChange(mq) {
         if (mq.matches) {
-           swipe.on('swipeleft', swipeLeftInfo);
-           swipe.on('swiperight', swipeRightInfo);
            if ($(".js-main-card").hasClass("index")) {
                 TweenMax.to(".main-cards", 0, {x:"-50%"});
            }
@@ -275,32 +272,32 @@
             }
         });
 
-        $('#game').on('click', ".eye-info", function (){
-            if ($(this).hasClass("hide")) {
-                swipeRightInfo();
-            } else {
-                swipeLeftInfo();
-            }
-            console.log('CLICK!');
-       });
-        $('.eye-hand').on('click', function (){
-            if ($(this).hasClass("hide")) {
-                swipeRightInfo();
-            } else {
-                swipeLeftInfo();
-            }
-            console.log('CLICK!');
-        });
+       //  $('#game').on('click', ".eye-info", function (){
+       //      if ($(this).hasClass("hide")) {
+       //          swipeRightInfo();
+       //      } else {
+       //          swipeLeftInfo();
+       //      }
+       //      console.log('CLICK!');
+       // });
+       //  $('.eye-hand').on('click', function (){
+       //      if ($(this).hasClass("hide")) {
+       //          swipeRightInfo();
+       //      } else {
+       //          swipeLeftInfo();
+       //      }
+       //      console.log('CLICK!');
+       //  });
     }
 
-    function swipeLeftInfo(){
-        $('.eye').addClass("hide");
-        TweenMax.to('.modal__description.active', .3, {x: "-157%", ease:Power2.easeInOut});
-    }
-    function swipeRightInfo(){
-        $('.eye').removeClass("hide");
-        TweenMax.to('.modal__description.active', .3, {x: "-50%", ease:Power2.easeInOut});
-    }
+    // function swipeLeftInfo(){
+    //     $('.eye').addClass("hide");
+    //     TweenMax.to('.modal__description.active', .3, {x: "-157%", ease:Power2.easeInOut});
+    // }
+    // function swipeRightInfo(){
+    //     $('.eye').removeClass("hide");
+    //     TweenMax.to('.modal__description.active', .3, {x: "-50%", ease:Power2.easeInOut});
+    // }
 
     function mute() {
         $("#sound").toggleClass('mute');

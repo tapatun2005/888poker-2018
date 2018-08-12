@@ -161,7 +161,7 @@ gulp.task('script-hints', function () {
 
 
 var scriptsHTML = [
-  "src/js/hammerjs.js",
+  //"src/js/hammerjs.js",
   "src/js/howler.min.js",
   "src/js/jquery.nanoscroller.js",
   "src/js/PxLoader.js",
@@ -171,7 +171,7 @@ var scriptsHTML = [
 ]
 
 var scriptsPHP = [
-  "src/js/hammerjs.js",
+  //"src/js/hammerjs.js",
   "src/js/howler.min.js",
   "src/js/jquery.nanoscroller.js",
   "src/js/PxLoader.js",

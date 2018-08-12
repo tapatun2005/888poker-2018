@@ -56,6 +56,8 @@ html#index-page(data-lang=langCode)
 				p Please, update your browser to get full experience of this web application.
 				a(href="https://www.microsoft.com/en-gb/WindowsForBusiness/End-of-IE-support") Support for older versions of Internet Explorer ends. 
 				img(src="images/icon-ie.png", alt="")
+		#rotate
+			img(src="images/icon-rotate.svg", alt="")
 
 		#main
 			include ./includes/_loading.jade
@@ -65,7 +67,8 @@ html#index-page(data-lang=langCode)
 				.gradient--blue
 				.noise
 			
-			include ./includes/main_cards.jade
+			.main-cards.active
+				include ./includes/main_cards.jade
 			include ./includes/nav.jade
 
 			#table

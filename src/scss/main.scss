@@ -30,6 +30,28 @@
 	}
 }
 
+#rotate {
+	display:none;
+	@media(max-width: $phone-big) and (max-height: 350px){
+		display: block;
+		position: fixed;
+		z-index: 11;
+		width: 100vw;
+		height: 100vh;
+		top:0;
+		left:0;
+		background: $darkest_blue;
+		img {
+			width: 55px;
+			height: 55px;
+			position: absolute;
+			top:50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+}
+
 .backgrounds {
 	position:absolute;
 	width:100%;
@@ -402,12 +424,22 @@
 .nav__item-bottom-right {
 	bottom: 5px;
 	right:10px;
+	@media(max-width: $phone-big) {
+		bottom:0;
+		right: 5px;
+	}
+	@media(max-width: 350px) {
+		display: none;
+	}
 }
 	.poker-logo {
 		width: 60px;
 		@media screen and( max-width: $tablet-medium) {
 			width:35px;
 		}
+		@media screen and( max-width: $phone-big) {
+			width: 30px;
+		}	
 	}
 
 	.nav__flex {
@@ -577,7 +609,7 @@
 	}
 
 	.back--right {
-		right:100%;
+		right:0;
 	}
 
 	.nav__list {
@@ -811,11 +843,13 @@
 	@media screen and (max-width: $tablet) {
 		width:40%;
 	}
-	@media screen and (max-width:$phone-big) {
+	@media (max-width:$phone-big) {
+		overflow: inherit;
+		top:70%;
 		left:50%;
 		width:80%;
-		height:70%;
-		background-color:$darkest_blue;
+		height:45%;
+		background-color:lighten($darkest_blue,20);
 		padding:10px 20px 10px;
 	}
 }
@@ -831,6 +865,7 @@
 		}
 		@media screen and (max-width: $phone-big) {
 			padding-right: 32px;
+			font-size: 1.1em;
 		}
 	}
 	.modal__description--text {
@@ -841,7 +876,8 @@
 		font-size: .85em;
 		opacity: .75;
 		flex:1 0 auto;
-		@media screen and (max-height:$phone) {
+		@media (max-width:$phone-big) {
+			font-size: .8em;
 			padding: 5px 5px 5px 0;
 			-webkit-mask-image: none;
 		}
@@ -901,8 +937,15 @@
 	left:50%;
 	transform:translate(-50%, -50%);
 	pointer-events:none;
+	transition: top .5s ease-in-out;
 	&.active {
-		pointer-events:auto;
+		pointer-events: auto;
+	}
+	@media (max-width: $phone-big) {
+		top:30%;
+		&.active {
+			top: 50%;
+		}
 	}
 }
 .main-cards__item {
@@ -1163,6 +1206,16 @@
 		@media screen and (max-height:$phone) {
 			bottom: 2px;
 		}
+		@media (max-width: $phone-big) {
+			bottom:2px;
+			left: 52%;
+		}
+		@media (max-width: 350px) {
+			bottom:2px;
+			left: auto;
+			transform: translate(0);
+			right: 2px;
+		}
 	}
 		.game__tab {
 			padding:5px 10px;
@@ -1173,6 +1226,10 @@
 			background-color:$darkest_blue;
 			// margin-right:2px;
 			transition: color .2s ease-in-out;
+			@media (max-width: $phone-big) {
+				padding: 5px 6px;
+				font-size: .7em;
+			}
 			&:last-child{
 				// border-right:1px solid $blue;
 			}
@@ -1187,8 +1244,6 @@
 		}
 
 		.game__stages__navigation {
-			display: flex;
-			flex-flex-direction:column;
 			display: flex;
 			flex-direction:column;
 			align-items:center;
@@ -1205,6 +1260,10 @@
 			will-change:opacity;
 			&.active {
 				pointer-events:auto;
+			}
+			@media screen and (max-width: $phone-big) {
+				top:29%;
+				max-height: 200px;
 			}
 			@media screen and (max-height: $phone) {
 				height: 65%;
@@ -1325,10 +1384,17 @@
 			@media screen and (max-width:$phone-big) {
 				left:50%;
 				width:80%;
-				height:70%;
-				background-color:$darkest_blue;
+				height:40%;
+				background-color:lighten($darkest_blue,20);
 				padding:10px 20px 10px;
 				box-shadow: 0 0 20px rgba(0,0,0,.75);
+				top:74%;
+			}
+			h3 {
+				@media screen and (max-width:$phone-big) {
+					font-size:.9em;
+				}
+
 			}
 
 		}	
@@ -1341,6 +1407,9 @@
 				max-width: 450px;
 				margin: 10px 0 10px 20px;
 				position:relative;
+				@media screen and (max-width:$phone-big) {
+					margin: 10px 0 5px;
+				}
 			}
 				.stages__nav__line {
 					height: 100%;
@@ -1476,6 +1545,9 @@
 					display: flex;
 					align-items:center;
 					cursor:pointer;
+					@media (max-width: $phone-big) {
+						position: absolute;
+					}
 				}
 				.nav-prev {
 					background: $blue;
@@ -1486,15 +1558,29 @@
 					&:hover {
 						opacity: 1;
 					}
+					@media(max-width: $phone-big) {
+						opacity: .75;
+						left: 0;
+						top: 50%;
+						transform: translate(-70%, -50%);
+					}
 				}
 				.nav-next {
 					background: $blue;
 					opacity: .75;
 					transition: opacity .2s ease-in-out;
 					will-change:opacity;
+					@media (max-width: $phone-big) {
+						right: 0;
+						top: 50%;
+						transform: translate(70%, -50%);
+					}
 					.nav-next__span-1 {
 						font-size:.8em;
 						margin-right: 5px;
+						@media(max-width: $phone-big) {
+							display: none;
+						}
 					}
 					&:hover {
 						opacity: 1;
@@ -1531,7 +1617,8 @@
 	@media screen and (max-width:$phone-big) {
 		width:82%;
 		left:47%;
-		padding-top: 58%;
+		padding-top: 54%;
+		top: 31%;
 	}
 	@media screen and (max-height: 380px) {
 		width:46%;
@@ -1701,42 +1788,6 @@
 		background-image: url("../images/chip.svg");
 	}
 
-//eye icon 
-
-.eye {
-	display:none;
-	position:absolute;
-	top:0;
-	right:0;
-	width: 30px;
-	height:30px;
-	background-color:$yellow;
-	background-image: url("../images/icon-eye.svg");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 75% auto;
-	cursor: pointer;
-	@media screen and (max-width: $phone-big) {
-		display: block;
-	}
-	&:after {
-		content: "";
-		display: block;
-		position:absolute;
-		width: 75%;
-		height: 2px;
-		top:50%;
-		left:50%;
-		background: $darkest_blue;
-		transform:translate(-50%, -50%) scaleX(1) rotate(-45deg);
-		transition: transform .2s ease-in-out;
-	}
-	&.hide {
-		&:after {
-			transform:translate(-50%, -50%) scaleX(0) rotate(-45deg);
-		}
-	}
-}
 
 
 
