@@ -609,7 +609,10 @@
 	}
 
 	.back--right {
-		right:0;
+		right:100%;
+		@media(max-width: $phone) {
+			right:0;
+		}
 	}
 
 	.nav__list {
